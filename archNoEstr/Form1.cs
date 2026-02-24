@@ -33,7 +33,7 @@ namespace archNoEstr
         }
 
         /// <summary>
-        /// Botón 1: Abrir archivo .srt o .sql
+        /// Botón 1: Abrir archivo .srt, .sql o .log
         /// </summary>
         private void btnAbrir_Click(object sender, EventArgs e)
         {
@@ -41,7 +41,7 @@ namespace archNoEstr
             {
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
-                    openFileDialog.Filter = "Archivos SRT y SQL|*.srt;*.sql|Archivos SRT|*.srt|Archivos SQL|*.sql|Todos los archivos|*.*";
+                    openFileDialog.Filter = "Archivos soportados|*.srt;*.log|Archivos SRT|*.srt|Archivos LOG|*.log|Todos los archivos|*.*";
                     openFileDialog.Title = "Seleccionar archivo";
 
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -219,7 +219,7 @@ namespace archNoEstr
 
                 using (SaveFileDialog saveFileDialog = new SaveFileDialog())
                 {
-                    saveFileDialog.Filter = "Archivos SRT|*.srt|Archivos SQL|*.sql|Todos los archivos|*.*";
+                    saveFileDialog.Filter = "Archivos SRT|*.srt|Archivos LOG|*.log|Todos los archivos|*.*";
                     saveFileDialog.Title = "Guardar archivo";
                     
                     if (!string.IsNullOrEmpty(rutaArchivoActual))
@@ -367,7 +367,7 @@ namespace archNoEstr
             {
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
-                    openFileDialog.Filter = "Todos los archivos de texto|*.srt;*.sql;*.txt|Archivos SRT|*.srt|Archivos SQL|*.sql|Archivos TXT|*.txt|Todos los archivos|*.*";
+                    openFileDialog.Filter = "Todos los archivos soportados|*.srt;*.log;*.txt|Archivos SRT|*.srt|Archivos LOG|*.log|Archivos TXT|*.txt|Todos los archivos|*.*";
                     openFileDialog.Title = "Importar archivo";
 
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
